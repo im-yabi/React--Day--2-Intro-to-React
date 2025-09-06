@@ -1,0 +1,256 @@
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  color: #333;
+}
+
+.app-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sub-heading {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+
+.price-card {
+  width: 300px;
+  border-radius: 16px;
+  padding: 30px 20px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+.price-card.highlight {
+  border: 2px solid #4caf50;
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.plan-title {
+  color: #666;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+  color: #2e7d32;
+}
+
+.plan-price .period {
+  font-size: 16px;
+  color: #888;
+  margin-left: 5px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.features-list li {
+  margin: 10px 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.available {
+  color: #000;
+}
+
+.unavailable {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.plan-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.plan-btn:hover {
+  background: linear-gradient(135deg, #388e3c, #1b5e20);
+}
+
+.option-container {
+  position: relative;
+  width: 100%;
+}
+
+.options-menu {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-item {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #eeeeee;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.option-item:hover {
+  background: #c8e6c9;
+}
+
+.selected-text {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-card {
+    width: 90%;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #555;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.modal-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s;
+}
+
+.modal-btn.confirm {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+}
+
+.modal-btn.confirm:hover {
+  background: linear-gradient(135deg, #388e3c, #1b5e20);
+}
+
+.modal-btn.cancel {
+  background: #eeeeee;
+  color: #333;
+}
+
+.modal-btn.cancel:hover {
+  background: #e57373;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
